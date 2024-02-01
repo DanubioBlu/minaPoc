@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "experimental-offchain-zkapp-storage": "^0.1.4"
+  }
+}

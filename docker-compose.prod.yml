@@ -1,0 +1,14 @@
+version: '3'
+services:
+   middleware:
+    container_name: "mina_dev"
+    volumes:
+        - type: bind
+          source: ${PWD}/contracts
+          target: /app/contracts
+        - type: bind
+          source: ${PWD}/ui
+          target: /app/ui
+        - type: bind
+          source: ${PWD}/localdata
+          target: /app/localdata

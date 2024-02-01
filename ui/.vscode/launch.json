@@ -1,0 +1,68 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+
+      {
+        "name": "Next.js: debug server-side",
+        "type": "node-terminal",
+        "request": "launch",
+        "command": "npm run dev",
+      },
+      {
+        "name": "Next.js: debug client-side",
+        "type": "chrome",
+        "request": "launch",
+        "url": "http://localhost:3000",
+        // "cwd": "${workspaceFolder}",
+      //   "webRoot": "${workspaceRoot}",
+      //   "resolveSourceMapLocations": [
+      //     "${workspaceFolder}/**",
+      //     "!**/node_modules/**"
+      // ],
+
+      },
+      {
+        "name": "Next.js: debug full stack",
+        "type": "node-terminal",
+        "request": "launch",
+
+
+        "command": "npm run dev",
+        // "cwd": "${workspaceFolder}/trends-check/ui",
+
+        // "localRoot": "${workspaceFolder}/trends-check/ui",
+        // "remoteRoot": "${workspaceFolder}/trends-check/ui",
+        "serverReadyAction": {
+          "pattern": "- Local:.+(https?://.+)",
+          "uriFormat": "%s",
+          "action": "debugWithChrome",
+
+        
+        }
+      },{
+        "name": "Run deploy script",
+        "request": "launch",
+        "type": "node",
+        "runtimeExecutable": "npm",
+        "runtimeArgs": ["run","deploy" ,"tester"],
+      },
+      {
+        "name": "Run update script",
+        "request": "launch",
+        "type": "node",
+        "runtimeExecutable": "npm",
+        "runtimeArgs": ["run","update-script"],
+      },
+      {
+        "name": "Attach to Node",
+        "address": "127.0.0.1",
+        "port": 9229,
+        "request": "attach",
+        "localRoot": "${workspaceFolder}/trends-check/ui",
+        "remoteRoot": "${workspaceFolder}/trends-check/ui",
+        "skipFiles": ["<node_internals>/**"],
+        "type": "node"
+      }
+
+    ]
+  }

@@ -1,0 +1,21 @@
+FROM node:lts
+
+WORKDIR /usr/src/app
+
+RUN apt-get update && \
+    apt-get install make -y
+
+
+RUN npm install -g zkapp-cli
+RUN npm install pm2 -g
+
+ENV PORT 3000
+# set hostname to localhost
+ENV HOSTNAME "0.0.0.0"
+
+EXPOSE 80
+EXPOSE 443
+EXPOSE 9230 
+EXPOSE 3000
+
+CMD tail -f /dev/null
