@@ -1,14 +1,10 @@
 version: '3'
 services:
    middleware:
-    container_name: "mina_dev"
+    container_name: "mina_prod"
+    #image: "ghcr.io/danubioblu/mina_poc_${MODE}:1.0"
+    image: "alessandrosighinolfi/minapoc:1.0"
     volumes:
-        - type: bind
-          source: ${PWD}/contracts
-          target: /app/contracts
-        - type: bind
-          source: ${PWD}/ui
-          target: /app/ui
-        - type: bind
-          source: ${PWD}/localdata
-          target: /app/localdata
+      - type: bind
+        source: ${PWD}/localdata/database.json
+        target: /app/localdata/database.json
